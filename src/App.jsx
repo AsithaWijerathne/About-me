@@ -8,6 +8,7 @@ function App() {
         <span className="fname">Asitha</span>
         <span className="lname">Wijerathne</span>
       </h1>
+      <h2>Fullstack Engineer</h2>
     </div>
   );
 }
