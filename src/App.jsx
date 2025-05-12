@@ -4,11 +4,25 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1 className="name">
-        <span className="fname">Asitha</span>
-        <span className="lname">Wijerathne</span>
-      </h1>
-      <h2>Fullstack Engineer</h2>
+      <div className="navigationBar">
+        <header>
+          <a href="#" class="logo">
+            asitha.
+          </a>
+
+          <i class="bx bx-menu" id="menu-icon"></i>
+
+          <nav>
+            <a href="#" class="active">
+              Home
+            </a>
+            <a href="#">Services</a>
+            <a href="#">Resume</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+          </nav>
+        </header>
+      </div>
     </div>
   );
 }
