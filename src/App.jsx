@@ -13,6 +13,7 @@ import {
   MapPin,
   Phone,
   User,
+  Smartphone,
 } from "lucide-react";
 import "./App.css";
 
@@ -75,13 +76,14 @@ const App = () => {
               Software Engineering Undergraduate
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-              Building Scalable <br />
-              <span className="text-slate-500">Solutions & Elegant Code.</span>
+              Code. Create. <br />
+              <span className="text-slate-500">Innovate.</span>
             </h1>
             <p className="text-lg text-slate-400 max-w-lg leading-relaxed">
-              I am Asitha Wijerathne. I build accessible, pixel-perfect things
-              for the web. Currently focused on mastering full-stack
-              development.
+              I am Asitha Wijerathne, a Software Engineering Undergraduate. I
+              bridge the gap between web and mobile, crafting responsive React
+              applications and native Android solutions that solve real-world
+              problems.
             </p>
             <div className="flex gap-4 pt-4">
               <a
@@ -112,7 +114,10 @@ const App = () => {
             <div className="relative w-72 h-72 md:w-96 md:h-96 bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-500">
               {/* Replace icon with: <img src="/your-photo.jpg" className="w-full h-full object-cover" /> */}
               <div className="w-full h-full flex items-center justify-center bg-slate-900">
-                <User size={80} className="text-slate-600" />
+                <img
+                  src="/src/assets/profile.jpg"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -123,15 +128,22 @@ const App = () => {
           <h2 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
             <Terminal size={20} className="text-blue-500" /> Technical Arsenal
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+          {/* Updated grid to fit 5 items (2 cols on mobile, 3 on tablet, 5 on desktop) */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
               {
                 icon: <Code2 />,
                 name: "Frontend",
-                desc: "React, Tailwind, Vite",
+                desc: "HTML, CSS, React, Tailwind, Vite",
               },
+              {
+                icon: <Smartphone />,
+                name: "Mobile App",
+                desc: "Java, Android Studio",
+              }, // <--- New Java/Android Card
               { icon: <Server />, name: "Backend", desc: "Node.js, Express" },
-              { icon: <Database />, name: "Database", desc: "SQL, MongoDB" },
+              { icon: <Database />, name: "Database", desc: "SQL" },
               { icon: <Layout />, name: "Design", desc: "Figma, UI/UX" },
             ].map((tech, idx) => (
               <div
@@ -148,93 +160,175 @@ const App = () => {
           </div>
         </section>
 
-        {/* PROJECTS SECTION */}
+        {/* PROJECTS SECTION - ZIG-ZAG STYLE */}
         <section id="projects">
-          <div className="flex justify-between items-end mb-10">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-2">
-                Featured Projects
-              </h2>
-              <p className="text-slate-400">
-                Selected works from my academic journey.
-              </p>
-            </div>
-            <a
-              href="#"
-              className="hidden md:flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium"
-            >
-              View All <ExternalLink size={14} />
-            </a>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Featured Projects
+            </h2>
+            <div className="h-1 w-20 bg-blue-600 rounded"></div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Project 1: StudyMate */}
-            <div className="group relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition-all">
-              <div className="h-48 bg-slate-800/50 flex items-center justify-center border-b border-slate-800">
-                <div className="text-slate-600 font-mono">
-                  Image Placeholder
+          <div className="space-y-24">
+            {/* Project 1: StudyMate (Image Left, Text Right) */}
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Image Area */}
+              <div className="md:col-span-7 relative group">
+                <div className="absolute inset-0 bg-blue-600/20 rounded-xl transform rotate-3 group-hover:rotate-0 transition-all duration-300"></div>
+                <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
+                  {/* Replace with your actual screenshot later */}
+                  <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
+                    Project Screenshot
+                  </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+
+              {/* Text Area */}
+              <div className="md:col-span-5 flex flex-col items-start text-left">
+                <span className="text-blue-500 font-mono text-sm mb-2">
+                  Web Application
+                </span>
+                <h3 className="text-2xl font-bold text-white mb-4">
                   StudyMate
                 </h3>
-                <p className="text-slate-400 mb-4 line-clamp-2">
-                  A web application designed for students to share study
-                  materials and resources efficiently. Built to foster
-                  collaboration among peers.
-                </p>
-                <div className="flex gap-2 mb-6">
-                  {["React", "Node.js", "MongoDB"].map((tag) => (
+                <div className="bg-slate-800/50 p-6 rounded-lg backdrop-blur-sm border border-slate-700/50 mb-6 shadow-xl">
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    A collaborative platform designed to help students share
+                    resources and study together. Features include real-time
+                    chat, file sharing, and group scheduling.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {["React", "Node.js", "MongoDB", "Tailwind"].map((tech) => (
                     <span
-                      key={tag}
-                      className="text-xs font-medium px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700"
+                      key={tech}
+                      className="text-xs font-medium text-slate-400"
                     >
-                      {tag}
+                      {tech}
                     </span>
                   ))}
                 </div>
+
                 <div className="flex gap-4">
-                  <button className="text-sm font-medium text-white hover:text-blue-400 flex items-center gap-2">
-                    <Github size={16} /> Source Code
-                  </button>
-                  <button className="text-sm font-medium text-white hover:text-blue-400 flex items-center gap-2">
-                    <ExternalLink size={16} /> Live Demo
-                  </button>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    <Github size={20} />{" "}
+                    <span className="font-medium">Code</span>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    <ExternalLink size={20} />{" "}
+                    <span className="font-medium">Live Demo</span>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Project 2: HospitalDB */}
-            <div className="group relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-600 transition-all">
-              <div className="h-48 bg-slate-800/50 flex items-center justify-center border-b border-slate-800">
-                <div className="text-slate-600 font-mono">
-                  Image Placeholder
+            {/* Project 2: HospitalDB (Text Left, Image Right) */}
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Text Area (Ordered last on mobile, first on desktop) */}
+              <div className="md:col-span-5 order-2 md:order-1 flex flex-col items-end text-right">
+                <span className="text-blue-500 font-mono text-sm mb-2">
+                  Database System
+                </span>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  HospitalDB Manager
+                </h3>
+                <div className="bg-slate-800/50 p-6 rounded-lg backdrop-blur-sm border border-slate-700/50 mb-6 shadow-xl relative z-10">
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    A comprehensive management system for hospital records.
+                    Handled complex data relationships, patient history, and
+                    appointment scheduling using advanced SQL procedures.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap justify-end gap-2 mb-8">
+                  {["MySQL", "PHP", "Database Design", "R Language"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs font-medium text-slate-400"
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
+                </div>
+
+                <div className="flex gap-4">
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    <span className="font-medium">View Project</span>{" "}
+                    <Github size={20} />
+                  </a>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                  HospitalDB Management
-                </h3>
-                <p className="text-slate-400 mb-4 line-clamp-2">
-                  A comprehensive database management system for hospital
-                  records. Includes complex SQL triggers, procedures, and
-                  patient data handling.
-                </p>
-                <div className="flex gap-2 mb-6">
-                  {["SQL", "Database Design", "R"].map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-medium px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+
+              {/* Image Area */}
+              <div className="md:col-span-7 order-1 md:order-2 relative group">
+                <div className="absolute inset-0 bg-teal-500/20 rounded-xl transform -rotate-3 group-hover:rotate-0 transition-all duration-300"></div>
+                <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
+                  <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
+                    Database Diagram / UI
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Project 3: Android App (Image Left, Text Right) */}
+            <div className="grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-7 relative group">
+                <div className="absolute inset-0 bg-purple-600/20 rounded-xl transform rotate-3 group-hover:rotate-0 transition-all duration-300"></div>
+                <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
+                  <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
+                    App Screenshot
+                  </div>
+                </div>
+              </div>
+
+              <div className="md:col-span-5 flex flex-col items-start text-left">
+                <span className="text-blue-500 font-mono text-sm mb-2">
+                  Mobile Application
+                </span>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Zoom Scheduler
+                </h3>
+                <div className="bg-slate-800/50 p-6 rounded-lg backdrop-blur-sm border border-slate-700/50 mb-6 shadow-xl">
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    An Android application that automates meeting scheduling.
+                    Integrates with Zoom and Google Meet APIs to create and
+                    share meeting links instantly.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {["Java", "Android Studio", "Zoom API", "Firebase"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs font-medium text-slate-400"
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
+                </div>
+
                 <div className="flex gap-4">
-                  <button className="text-sm font-medium text-white hover:text-blue-400 flex items-center gap-2">
-                    <Github size={16} /> Source Code
-                  </button>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    <Github size={20} />{" "}
+                    <span className="font-medium">Source Code</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -307,7 +401,7 @@ const App = () => {
           <div className="flex justify-center gap-8 mb-10">
             <div className="flex items-center gap-2 text-slate-400">
               <Mail size={18} className="text-blue-500" />
-              <span>hello@asitha.dev</span>
+              <span>wijerathneasitha@gmail.com</span>
             </div>
             <div className="flex items-center gap-2 text-slate-400">
               <Phone size={18} className="text-blue-500" />
