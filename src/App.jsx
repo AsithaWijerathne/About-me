@@ -102,9 +102,33 @@ const App = () => {
 
             {/* Social Links */}
             <div className="flex gap-4 text-slate-500 pt-4">
-              <Github className="hover:text-white cursor-pointer transition-colors" />
-              <Linkedin className="hover:text-white cursor-pointer transition-colors" />
-              <Mail className="hover:text-white cursor-pointer transition-colors" />
+              {/* GitHub */}
+              <a
+                href="https://github.com/AsithaWijerathne"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                <Github />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+              >
+                <Linkedin />
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:your.email@example.com"
+                className="hover:text-white transition-colors"
+              >
+                <Mail />
+              </a>
             </div>
           </div>
 
@@ -178,7 +202,10 @@ const App = () => {
                 <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
                   {/* Replace with your actual screenshot later */}
                   <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
-                    Project Screenshot
+                    <img
+                      src="/src/assets/studymate.png"
+                      alt="StudyMate Screenshot"
+                    />
                   </div>
                 </div>
               </div>
@@ -200,14 +227,16 @@ const App = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {["React", "Node.js", "MongoDB", "Tailwind"].map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-medium text-slate-400"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {["React", "Node.js", "Firebase DB", "Tailwind"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs font-medium text-slate-400"
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
                 </div>
 
                 <div className="flex gap-4">
