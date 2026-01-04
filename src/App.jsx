@@ -26,7 +26,8 @@ const App = () => {
       <nav className="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
           <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-            AMW.
+            AMW
+            <span className="animate-ping text-blue-400">_</span>
           </div>
 
           {/* Desktop Menu */}
@@ -140,7 +141,8 @@ const App = () => {
               <div className="w-full h-full flex items-center justify-center bg-slate-900">
                 <img
                   src="/src/assets/profile.jpg"
-                  className="w-full h-full object-cover"
+                  alt="Asitha Wijerathne"
+                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
               </div>
             </div>
