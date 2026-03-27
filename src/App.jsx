@@ -17,6 +17,9 @@ import {
 } from "lucide-react";
 import "./App.css";
 
+import studyMateImg from "./assets/studymate.jpg";
+import budgetBuddyImg from "./assets/budgetbuddy.jpg";
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -204,10 +207,7 @@ const App = () => {
                 <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
                   {/* Replace with your actual screenshot later */}
                   <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
-                    <img
-                      src="/src/assets/studymate.png"
-                      alt="StudyMate Screenshot"
-                    />
+                    <img src={studyMateImg} alt="StudyMate Screenshot" />
                   </div>
                 </div>
               </div>
@@ -237,13 +237,13 @@ const App = () => {
                       >
                         {tech}
                       </span>
-                    )
+                    ),
                   )}
                 </div>
 
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://github.com/Dum1du/StudyMate"
                     className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
                   >
                     <Github size={20} />{" "}
@@ -287,7 +287,7 @@ const App = () => {
                       >
                         {tech}
                       </span>
-                    )
+                    ),
                   )}
                 </div>
 
@@ -313,52 +313,79 @@ const App = () => {
               </div>
             </div>
 
-            {/* Project 3: Android App (Image Left, Text Right) */}
+            {/* Project 3: BudgetBuddy (Image Left, Text Right) */}
             <div className="grid md:grid-cols-12 gap-8 items-center">
+              {/* Image Area */}
               <div className="md:col-span-7 relative group">
+                {/* Purple background accent that straightens on hover */}
                 <div className="absolute inset-0 bg-purple-600/20 rounded-xl transform rotate-3 group-hover:rotate-0 transition-all duration-300"></div>
+
+                {/* Main image container */}
                 <div className="relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden aspect-video group-hover:-translate-y-2 transition-transform duration-300 shadow-2xl">
-                  <div className="w-full h-full flex items-center justify-center bg-slate-800 text-slate-600 font-mono">
-                    App Screenshot
-                  </div>
+                  <img
+                    src={budgetBuddyImg}
+                    alt="BudgetBuddy Screenshot"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                  />
                 </div>
               </div>
 
+              {/* Text Area */}
               <div className="md:col-span-5 flex flex-col items-start text-left">
                 <span className="text-blue-500 font-mono text-sm mb-2">
-                  Mobile Application
+                  Android Application
                 </span>
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Zoom Scheduler
+                  BudgetBuddy
                 </h3>
                 <div className="bg-slate-800/50 p-6 rounded-lg backdrop-blur-sm border border-slate-700/50 mb-6 shadow-xl">
                   <p className="text-slate-300 text-sm leading-relaxed">
-                    An Android application that automates meeting scheduling.
-                    Integrates with Zoom and Google Meet APIs to create and
-                    share meeting links instantly.
+                    An offline-first personal finance tracker built to manage
+                    daily incomes, expenses, and custom bank accounts. Features
+                    robust local data storage, dynamic monthly filtering, and
+                    full CRUD capabilities for seamless financial tracking.
                   </p>
                 </div>
 
+                {/* Tech Stack Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {["Java", "Android Studio", "Zoom API", "Firebase"].map(
-                    (tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs font-medium text-slate-400"
-                      >
-                        {tech}
-                      </span>
-                    )
-                  )}
+                  {[
+                    "Java",
+                    "Android SDK",
+                    "Room Database",
+                    "Material Design",
+                  ].map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-medium text-slate-400 bg-slate-800/50 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
 
-                <div className="flex gap-4">
+                {/* Call to Action Buttons */}
+                <div className="flex gap-6">
+                  {/* GitHub Link */}
                   <a
-                    href="#"
+                    href="https://github.com/AsithaWijerathne/BudgetBuddy"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
                   >
                     <Github size={20} />{" "}
                     <span className="font-medium">Source Code</span>
+                  </a>
+
+                  {/* APK Download Link */}
+                  <a
+                    href="https://github.com/AsithaWijerathne/BudgetBuddy/releases/tag/v1.0.0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors"
+                  >
+                    <ExternalLink size={20} />{" "}
+                    <span className="font-medium">Download APK</span>
                   </a>
                 </div>
               </div>
