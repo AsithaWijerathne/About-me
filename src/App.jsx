@@ -27,6 +27,7 @@ import "./App.css";
 import studyMateImg from "./assets/studymate.jpg";
 import budgetBuddyImg from "./assets/budgetbuddy.jpg";
 import kineTownImg from "./assets/kinetown.jpg";
+import profileImg from "./assets/profile.jpg";
 
 const supabaseUrl = "https://szbxoirdmwxqdznjmpgv.supabase.co";
 const supabaseKey = "sb_publishable_lv859lgCHwg4yhbsN9ZGLA_MCjUsjBR";
@@ -312,7 +313,7 @@ const App = () => {
             <div className="relative w-72 h-72 md:w-96 md:h-96 bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-500">
               <div className="w-full h-full flex items-center justify-center bg-slate-900">
                 <img
-                  src="/src/assets/profile.jpg"
+                  src={profileImg}
                   alt="Asitha Wijerathne"
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
