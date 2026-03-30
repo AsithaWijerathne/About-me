@@ -27,6 +27,7 @@ import "./App.css";
 import studyMateImg from "./assets/studymate.jpg";
 import budgetBuddyImg from "./assets/budgetbuddy.jpg";
 import kineTownImg from "./assets/kinetown.jpg";
+import profileImg from "./assets/profile.jpg";
 
 const supabaseUrl = "https://szbxoirdmwxqdznjmpgv.supabase.co";
 const supabaseKey = "sb_publishable_lv859lgCHwg4yhbsN9ZGLA_MCjUsjBR";
@@ -258,7 +259,8 @@ const App = () => {
           id="home"
           className="grid md:grid-cols-2 gap-12 items-center min-h-[60vh]"
         >
-          <div className="space-y-6">
+          {/* TEXT AREA: order-2 (bottom) on mobile, md:order-1 (left side) on desktop */}
+          <div className="space-y-6 order-2 md:order-1">
             <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium border border-blue-500/20">
               Software Engineering Undergraduate
             </div>
@@ -307,12 +309,13 @@ const App = () => {
             </div>
           </div>
 
-          <div className="relative group flex justify-center md:justify-end">
+          {/* IMAGE AREA: order-1 (top) on mobile, md:order-2 (right side) on desktop */}
+          <div className="relative group flex justify-center md:justify-end order-1 md:order-2">
             <div className="absolute inset-0 bg-blue-500 blur-[100px] opacity-20 rounded-full"></div>
             <div className="relative w-72 h-72 md:w-96 md:h-96 bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-2xl rotate-3 group-hover:rotate-0 transition-all duration-500">
               <div className="w-full h-full flex items-center justify-center bg-slate-900">
                 <img
-                  src="/src/assets/profile.jpg"
+                  src={profileImg}
                   alt="Asitha Wijerathne"
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
